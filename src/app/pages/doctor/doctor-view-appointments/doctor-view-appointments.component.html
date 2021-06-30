@@ -1,0 +1,69 @@
+
+
+<br>
+<h1 class="text-center">Requested-Appointments</h1>
+
+<mat-divider></mat-divider>
+
+<br><br>
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card>
+            <div class="bootstrap-wrapper">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-md-4" *ngFor="let c of getdata">
+                            <mat-card *ngIf="!c.status" class="example-card" >
+                                <mat-card-header>
+                                  <div  mat-card-avatar class="example-header-image"></div>
+                                 
+                                  <mat-card-title>{{c.name}}</mat-card-title>
+                                  <mat-card-subtitle>{{c.weight}}</mat-card-subtitle>
+                                </mat-card-header>
+                               
+                                <mat-card-content>
+                                    <mat-list role="list">
+                                        <mat-list-item role="listitem">Status: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <button *ngIf="c.status" mat-stroked-button style="color: green;">Accepted</button>  <button *ngIf="!c.status" mat-stroked-button style="color: blue;">Pending</button></mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">name:    {{c.name}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">age   :    {{c.age}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">Gender   :    {{c.sex}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                         <mat-list-item role="listitem">email   :    {{c.weight}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">phone number   :    {{c.decription}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">
+                                            <b *ngIf="c.slot1">Appointmen-Slot     :    10:am</b>
+                                            <b *ngIf="c.slot2">Appointmen-Slot     :    11:am</b>
+                                            <b *ngIf="c.slot3">Appointmen-Slot     :    2:pm</b>
+                                            <b *ngIf="c.slot4">Appointmen-Slot     :    3:pm</b>
+                                        </mat-list-item> 
+                                        <mat-divider></mat-divider>
+                                    </mat-list>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                  <button  *ngIf="!c.status" (click)="accept(c.apid)" mat-raised-button color="accent">Accept</button>
+                                
+                                  <button (click)=del(c.apid) mat-raised-button color="warn">Delete</button>                                 
+                                 
+                                </mat-card-actions>
+                              </mat-card>
+                              <br>
+                              <br>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,68 @@
+
+<div class="c">
+    <div class="bootstrap-wrapper">
+        <div class="container center" >  
+            <img src="../../../../assets/appointments.png" class="profile-image" alt="">  <br>
+                <button style="margin-left:10px" mat-raised-button color="primary">Book Appointment</button>
+              
+        </div>
+       
+
+    </div>
+</div>
+
+<br>
+<br>
+<h2 style="text-align: center;">Some Of Our Doctors</h2>
+<mat-divider>
+</mat-divider>
+<br>
+<br>
+
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-4" *ngFor="let c of getdata">
+                <mat-card class="example-card" >
+                    <mat-card-header>
+                      <div *ngIf="c.sex=='Male'" mat-card-avatar class="example-header-image"></div>
+                      <div *ngIf="c.sex=='Female'" mat-card-avatar class="header-image"></div>
+                      <mat-card-title>{{c.firstname}}  {{c.lastname}}</mat-card-title>
+                      <mat-card-subtitle>{{c.degignation}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img *ngIf="c.degignation=='ENT specialist'" mat-card-image src="../../../../assets/FacilitiesENT.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Orthopaedic surgeon'" mat-card-image src="../../../../assets/ortho-1.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Nephrologist'" mat-card-image src="../../../../assets/Urologist.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Cardiologist'" mat-card-image src="../../../../assets/cardi.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Gynaecologist'" mat-card-image src="../../../../assets/gin.webp" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Paediatrician'" mat-card-image src="../../../../assets/Paediatrician.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Psychiatrists'" mat-card-image src="../../../../assets//Psychiatrists.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Radiologist'" mat-card-image src="../../../../assets/Radiologist.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Pulmonologist'" mat-card-image src="../../../../assets/Pulmonologist.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Endocrinologist'" mat-card-image src="../../../../assets/Endocrinologist.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <img *ngIf="c.degignation=='Neurologist'" mat-card-image src="../../../../assets/Neurologist.jpg" height="250px" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem">Qualification:    {{c.qualification}}</mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item role="listitem">Experience   :    {{c.experience}}</mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item role="listitem">Department   :    {{c.department}}</mat-list-item>
+                            <mat-divider></mat-divider>
+                            <mat-list-item role="listitem">Locality     :    {{c.locality}}</mat-list-item>
+                          </mat-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button style="margin-left: 80px;" mat-raised-button color="warn">Book Appointment</button>
+                     
+                    </mat-card-actions>
+                  </mat-card>
+                  <br>
+                  <br>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<mat-card class="kk">
+    <h1 style="text-align: center;">Your Profile Details</h1>
+ 
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    
+                    <img src="../../../../assets/doctor.png" class="profile-image" alt="">
+                <h1 class="mt-20 h"><b>{{get.firstname}} {{get.lastname}}</b></h1>
+                </div>
+                <div class="row">
+                    <div class="co-md-10 offset-md-1">
+                            <table  class="table text-center">
+                               
+                                    <tr>
+                                        <td>Username</td>
+                                        <td>{{get.email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{get.username}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone Number</td>
+                                        <td>{{get.mobilenumber}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Role</td>
+                                        <td>{{get.authorities[0].authority}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status</td>
+                                        <td>{{get.enabled?"ACTIVE":"NOT ACTIVE"}}</td>
+                                    </tr>
+                             
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button routerLink="/patient/edit-profile" mat-raised-button color="primary" >UPDATE</button>
+        <button mat-raised-button color="accent">Reset</button>
+    </mat-card-actions>
+</mat-card>

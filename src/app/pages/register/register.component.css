@@ -1,0 +1,17 @@
+.ex{
+    width: 100%;
+}
+.size{
+    font-size: large;
+}
+.title{
+    border-radius: 25px;
+    margin-top: 50px;
+    position: absolute;
+
+}
+.h{
+    background-image: url("../../../assets/health.jpg");
+    height: 91%;
+    background-size: cover;
+}

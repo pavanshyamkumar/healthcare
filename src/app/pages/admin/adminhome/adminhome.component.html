@@ -1,0 +1,88 @@
+<mat-grid-list cols="3" rowHeight="3:1">
+    <mat-grid-tile>
+        <mat-card class="k" style="background-color: #4db6ac;">
+            <mat-icon  style="font-size: 30px;" mat-list-icon>people</mat-icon>
+            <mat-card-title>{{d}}</mat-card-title>
+            <mat-card-subtitle style="font-size: 19px;">Doctors</mat-card-subtitle>
+
+
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile> <mat-card class="k" style="background-color: #26c6da;">
+        <mat-icon  style="font-size: 30px;" mat-list-icon>people</mat-icon>
+        <mat-card-title>{{p}}</mat-card-title>
+        <mat-card-subtitle style="font-size: 19px;">Patients</mat-card-subtitle>
+
+
+    </mat-card></mat-grid-tile>
+    <mat-grid-tile> <mat-card class="k" style="background-color: #ef5350;">
+        <mat-icon  style="font-size: 30px;" mat-list-icon>book_online</mat-icon>
+        <mat-card-title>{{a}}</mat-card-title>
+        <mat-card-subtitle style="font-size: 19px;">No of Appiontments</mat-card-subtitle>
+
+
+    </mat-card></mat-grid-tile>
+  </mat-grid-list>
+
+
+
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-card class="example-card k">
+        <mat-card-header>
+          <div mat-card-avatar class="avatar"></div>
+          <mat-card-title>Doctors</mat-card-title>
+          <mat-card-subtitle>Available Doctors</mat-card-subtitle>
+        </mat-card-header>
+       
+       <br>
+       <br>
+        <mat-card-content>
+         
+        </mat-card-content>
+        <mat-card-actions>
+          <button  routerLink="/admin/alldoctors" mat-button>View</button>
+          <button routerLink="/admin/add-doctor" mat-button>Add</button>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="example-card k">
+        <mat-card-header>
+          <div mat-card-avatar class="example"></div>
+          <mat-card-title>Patients</mat-card-title>
+          <mat-card-subtitle>Registred Patients</mat-card-subtitle>
+        </mat-card-header>
+       
+       <br>
+       <br>
+        <mat-card-content>
+         
+        </mat-card-content>
+        <mat-card-actions>
+          <button routerLink="/admin/allpatient" mat-button>View</button>
+          <button  mat-button>Add</button>
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="example-card k">
+        <mat-card-header>
+          <div mat-card-avatar class="ex"></div>
+          <mat-card-title>Appiontments</mat-card-title>
+          <mat-card-subtitle>Today Appiontments</mat-card-subtitle>
+        </mat-card-header>
+       
+       <br>
+       <br>
+        <mat-card-content>
+         
+        </mat-card-content>
+        <mat-card-actions>
+          <button  routerLink="/admin/allpatient" mat-button>View</button>
+        
+        </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
+ 
+</mat-grid-list>

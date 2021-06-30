@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<div class="h">
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="col-md-6 offset-md-3" style="width: 500px;">
+           
+
+            <mat-card class="title">
+                <div class="text-center">
+                <mat-card-title><B>REGISTER</B></mat-card-title>
+            </div>
+            <br>
+            <br>
+            <form (ngSubmit)="formSubmit()" #a="ngForm">
+            
+              <mat-form-field class="ex">
+                
+                <mat-label class="size"><mat-icon>person</mat-icon>&nbsp;Username</mat-label>
+                <input type="text" matInput #uk="ngModel" placeholder="Enter username...." [(ngModel)]="getdata.email" name="email" minlength="5" required>
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="uk.invalid && uk.touched">To Short...Minimum 5 Characters Required</mat-hint>
+               </mat-form-field>
+              <mat-form-field class="ex">
+                <mat-label class="size"><mat-icon>emoji_emotions</mat-icon>&nbsp;First Name</mat-label>
+                <input type="text" #u="ngModel" matInput placeholder="Enter FirstName...." [(ngModel)]="getdata.firstname" name="firstname"  minlength="5" required>
+                <mat-hint style="color:red; font-size: 14px;" *ngIf="u.invalid && u.touched">To Short...Minimum 5 Characters Required</mat-hint>
+              </mat-form-field>
+              
+              <mat-form-field class="ex">
+                <mat-label class="size"><mat-icon>emoji_emotions</mat-icon>&nbsp;Last Name</mat-label>
+                <input type="text" #ug="ngModel" matInput placeholder="Enter LastName...." [(ngModel)]="getdata.lastname" name="lastname" minlength="5" required>
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="ug.invalid && ug.touched">To Short...Minimum 5 Characters Required</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="ex">
+                <mat-label class="size"><mat-icon>mail</mat-icon>&nbsp;Email</mat-label>
+                <input type="email" matInput placeholder="Enter Email...." [(ngModel)]="getdata.username" name="username"  #use="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="use.invalid && use.touched">Invalid EmailId</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="ex">
+                <mat-label class="size"><mat-icon>phone</mat-icon>&nbsp;Mobile Number</mat-label>
+                <input type="text" matInput placeholder="Enter Mobile Number...." [(ngModel)]="getdata.mobilenumber" name="mobilenumber" #rr="ngModel" required pattern="^[0-9]{10}$">
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="rr.invalid && rr.touched">Invalid MobileNumber</mat-hint>
+              </mat-form-field><mat-form-field class="ex">
+                <mat-label class="size"><mat-icon>lock</mat-icon>&nbsp;Password</mat-label>
+                <input type="password" matInput placeholder="Enter password...." #x="ngModel" [type]="hide ? 'password' : 'text'" [(ngModel)]="getdata.password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint *ngIf="!(x.invalid && x.touched)"> Requirements: One Uppercse, One Lowercase, 8 Characters</mat-hint>
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="x.invalid && x.touched">Invalid Password</mat-hint>
+              </mat-form-field>
+              <mat-form-field class="ex">
+                <mat-label class="size"><mat-icon>lock</mat-icon>&nbsp;Confirm Password</mat-label>
+                <input type="password" matInput placeholder="Re-enter your Password...." [type]="hide ? 'password' : 'text'" [(ngModel)]="con.confirmpass" name="confirmpass" #d="ngModel" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="getdata.password!=con.confirmpass">Password Mismatch</mat-hint>
+              </mat-form-field>
+              <mat-card-actions>
+                <div class="container text-center">
+                   <button [disabled]="a.invalid" mat-flat-button color="primary" >&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;</button>
+                   <p>Already a Member??&nbsp;&nbsp;<a routerLink="/login">Login</a></p>
+                </div>
+              </mat-card-actions>
+            </form>
+            </mat-card>
+        </div>
+    </div>
+</div>
+</div>
+

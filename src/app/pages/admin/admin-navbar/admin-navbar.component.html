@@ -1,0 +1,54 @@
+
+<mat-toolbar color="primary">
+  <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+ </button>
+ <span>Health Care Management</span>
+ <span class="example-spacer"></span>
+ 
+ <button mat-icon-button style="margin-right: 150px;" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  {{getdata.username}}<mat-icon>arrow_drop_down</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/admin/editprofile">
+    <i class="fa fa-pencil-square-o" style="font-size: 15px;" mat-menu-icon></i>
+    <span style="font-size: 15px;">&nbsp;&nbsp;Edit Profile</span>
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <i class="fa fa-sign-out" style="font-size: 15px;" mat-menu-icon></i>
+    <span style="font-size: 15px;">&nbsp;&nbsp;Logout</span>
+  </button>
+  
+</mat-menu>
+ 
+</mat-toolbar>
+
+
+<mat-drawer-container class="ex" [hasBackdrop]="false">
+  <mat-drawer style="width: 15%;" #drawer mode="push">
+
+    <mat-card>
+      <mat-action-list>
+          <div mat-subheader>Menu</div>
+          <button (click)="drawer.toggle()" routerLink="/admin" mat-list-item><mat-icon mat-list-icon>home</mat-icon> Home</button>
+          <button (click)="drawer.toggle()" routerLink="/admin/profile" mat-list-item><mat-icon mat-list-icon>account_circle</mat-icon> Profile</button>
+          <button (click)="drawer.toggle()" routerLink="/admin/alldoctors" mat-list-item><i class="fa fa-user-md" mat-list-icon></i>Doctor</button>
+          <button (click)="drawer.toggle()" routerLink="/admin/allpatient" mat-list-item><i class="fa fa-plus-square" mat-list-icon></i> Patient</button>
+          <button (click)="drawer.toggle()" routerLink="/admin/add-doctor" mat-list-item><mat-icon mat-list-icon>person_add</mat-icon>Add-Doctor</button>
+          <button (click)="openpat()" mat-list-item><mat-icon mat-list-icon>person_add</mat-icon>Add-Patient</button>
+          <button (click)="logout()" mat-list-item><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+          <br>
+          <br>
+          <br>
+          <br><br><br>
+      </mat-action-list>
+  </mat-card>
+  
+  </mat-drawer>
+  <mat-drawer-content>
+    
+    <router-outlet></router-outlet>
+    
+  </mat-drawer-content>
+</mat-drawer-container>
+

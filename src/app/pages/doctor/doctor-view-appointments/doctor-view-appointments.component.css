@@ -1,0 +1,12 @@
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../assets//doctor.png');
+    background-size: cover;
+  }
+  .header-image{
+    background-image: url('../../../../assets//doc.png');
+    background-size: cover;
+  }

@@ -1,0 +1,68 @@
+
+
+<mat-card class="kk">
+    <h1 style="text-align: center;">Your Profile Details</h1>
+ 
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    
+                    <img src="../../../../assets/doctor.png" class="profile-image" alt="">
+                <h1 class="mt-20 h"><b>{{get.firstname}} {{get.lastname}}</b></h1>
+                <h3 class="mt-20 h"><b>{{get.degignation}}</b></h3>
+                </div>
+                <div class="row">
+                    <div class="co-md-10 offset-md-1">
+                            <table  class="table text-center">
+                               
+                                    <tr>
+                                        <td>fullname</td>
+                                        <td>{{get.firstname}} {{get.lastname}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>{{get.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>qualification</td>
+                                        <td>{{get.qualification}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>experience</td>
+                                        <td>{{get.experience}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Department</td>
+                                        <td>{{get.department}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone Number</td>
+                                        <td>{{get.mobilenumber}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td>{{get.sex}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Role</td>
+                                        <td>Doctor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>locality</td>
+                                        <td>{{get.locality}}</td>
+                                    </tr>
+                             
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button routerLink="/doctor/update-profile" mat-raised-button color="primary" >UPDATE</button>
+        <button mat-raised-button color="accent">Reset</button>
+    </mat-card-actions>
+</mat-card>
+
+

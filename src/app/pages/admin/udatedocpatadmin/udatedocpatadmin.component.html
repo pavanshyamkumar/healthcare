@@ -1,0 +1,122 @@
+
+
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <mat-card>
+      <br>
+      <mat-card-title class="text-center">Update Doctor</mat-card-title>
+      <br>
+      <mat-divider></mat-divider>
+      <br><br>
+     
+      <form (ngSubmit)="formSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="ex">
+              <mat-label class="size">LastName</mat-label>
+              <input [(ngModel)]="updatedata.lastname" name="lastname" matInput type="text">
+            </mat-form-field>
+            <br><br>
+  
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="ex">
+              <mat-label class="size">FirstName</mat-label>
+              <input [(ngModel)]="updatedata.firstname" name="firstname" matInput type="text">
+            </mat-form-field>
+            <br><br>
+          </div>
+  
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="ex">
+              <mat-label class="size">Qulification</mat-label>
+              <input [(ngModel)]="updatedata.qualification" name="qualification" matInput type="text">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="ex">
+              <mat-label class="size">Experieance</mat-label>
+              <input [(ngModel)]="updatedata.experience" name="experience" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field style="width: 60%;" appearance="fill">
+              <mat-label>Designation</mat-label>
+              <mat-select [(ngModel)]="updatedata.degignation" name="degignation">
+                <mat-option *ngFor="let f of deg" [value]="f.value">
+                  {{f.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="ex">
+              <mat-label class="size">Department</mat-label>
+              <input [(ngModel)]="updatedata.department" name="department" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+        
+        
+        <mat-form-field class="ex">
+          <mat-label class="size">Email</mat-label>
+          <input [(ngModel)]="updatedata.name" name="name" matInput type="text" disabled>
+        </mat-form-field>
+        <br><br>
+        <mat-form-field class="ex">
+          <mat-label class="size">age</mat-label>
+          <input [(ngModel)]="updatedata.age" name="email" matInput type="number">
+        </mat-form-field>
+        <br><br>
+        <div >
+          <label>Gender </label>
+          <mat-radio-group aria-label="Select an option" [(ngModel)]="updatedata.sex" name='sex'>
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="others">Others</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field class="ex">
+              <mat-label class="size">MobileNumber</mat-label>
+              <input [(ngModel)]="updatedata.mobilenumber" name="mobilenumber" matInput type="text">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="ex">
+              <mat-label class="size">decprition</mat-label>
+              <input [(ngModel)]="updatedata.decpription" name="decpription" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+
+       
+        <mat-form-field class="ex">
+          <mat-label class="size">locality</mat-label>
+          <input [(ngModel)]="updatedata.locality" name="locality" matInput type="text">
+        </mat-form-field>
+  
+  
+        <mat-card-actions>
+          <div class="container text-center">
+            <button type="submit" mat-flat-button color="primary">&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;</button>
+            <button mat-flat-button color="warn"
+              style="margin-left: 10px;">&nbsp;&nbsp;&nbsp;Clear&nbsp;&nbsp;&nbsp;</button>
+          </div>
+        </mat-card-actions>
+  
+      </form>
+  
+    
+  
+    </mat-card>
+  </div>
+</div>
+    

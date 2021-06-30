@@ -1,0 +1,66 @@
+<br>
+<h1 class="text-center">Your Booked-Appointments</h1>
+
+<mat-divider></mat-divider>
+
+<br><br>
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card>
+            <div class="bootstrap-wrapper">
+                <div class="container">
+                    <div class="row" >
+                        <div class="col-md-4" *ngFor="let c of appdata">
+                            <mat-card class="example-card" >
+                                <mat-card-header>
+                                  <div  mat-card-avatar class="example-header-image"></div>
+                                 
+                                  <mat-card-title>{{c.doctor.firstname}}  {{c.doctor.lastname}}</mat-card-title>
+                                  <mat-card-subtitle>{{c.doctor.degignation}}</mat-card-subtitle>
+                                </mat-card-header>
+                               
+                                <mat-card-content>
+                                    <mat-list role="list">
+                                        <mat-list-item role="listitem">Status: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <button *ngIf="c.status" mat-stroked-button style="color: green;">Accepted</button>  <button *ngIf="!c.status" mat-stroked-button style="color: blue;">Pending</button></mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">Qualification:    {{c.doctor.qualification}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">Experience   :    {{c.doctor.experience}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">Department   :    {{c.doctor.department}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">Booking Date   :    {{c.date}}</mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item role="listitem">
+                                            <b *ngIf="c.slot1">Appointmen-Slot     :    10:am</b>
+                                            <b *ngIf="c.slot2">Appointmen-Slot     :    11:am</b>
+                                            <b *ngIf="c.slot3">Appointmen-Slot     :    2:pm</b>
+                                            <b *ngIf="c.slot4">Appointmen-Slot     :    3:pm</b>
+                                        </mat-list-item> 
+                                        <mat-divider></mat-divider>
+                                    </mat-list>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                  <button [routerLink]="'/patient/view-appointment-details/'+c.apid"  mat-raised-button color="primary">View</button>
+                                
+
+                                 
+                                 
+                                </mat-card-actions>
+                              </mat-card>
+                              <br>
+                              <br>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+
+
+

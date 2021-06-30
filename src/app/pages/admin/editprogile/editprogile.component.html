@@ -1,0 +1,58 @@
+
+    <div class="container">
+            <mat-card class="r">
+
+                    <mat-card-title style="text-align:center;font-size: 35px;margin-top: 20px;">
+                         Edit Profile
+                    </mat-card-title>
+            
+                    <form (ngSubmit)="formSubmit()">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="ex">
+                                    <mat-label  class="size">LastName</mat-label>
+                                    <input [(ngModel)]="updatedata.lastname" name="lastname" matInput type="text" >
+                                  </mat-form-field>
+                                  <br><br>
+
+                            </div>
+                            <div class="col-md-6">
+                                <mat-form-field class="ex">
+                                    <mat-label  class="size">FirstName</mat-label>
+                                    <input [(ngModel)]="updatedata.firstname" name="firstname" matInput type="text" >
+                                  </mat-form-field>
+                                  <br><br>
+                            </div>
+                      
+                        </div>
+                        <mat-form-field class="ex">
+                            <mat-label  class="size">Email</mat-label>
+                            <input [(ngModel)]="getdata.username" name="username" matInput type="text" disabled >
+                          </mat-form-field>
+                          <br><br>
+                          <mat-form-field class="ex">
+                            <mat-label  class="size">Username</mat-label>
+                            <input [(ngModel)]="updatedata.email" name="email" matInput type="text" >
+                          </mat-form-field>
+                          <br><br>
+                          <mat-form-field class="ex">
+                            <mat-label  class="size">MobileNumber</mat-label>
+                            <input [(ngModel)]="updatedata.mobilenumber" name="mobilenumber" matInput type="text" >
+                          </mat-form-field>
+                          <br><br>
+
+                          <mat-card-actions>
+                            <div class="container text-center">
+                               <button type="submit"  mat-flat-button color="primary" >&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;</button>
+                               <button  mat-flat-button color="warn" style="margin-left: 10px;" >&nbsp;&nbsp;&nbsp;Clear&nbsp;&nbsp;&nbsp;</button>
+                            </div>
+                          </mat-card-actions>
+                        
+                    </form>
+           
+            </mat-card>
+    </div>
+
+   
+
+

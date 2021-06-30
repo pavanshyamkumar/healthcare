@@ -1,0 +1,68 @@
+
+<div class="row">
+    <div class="col-md-4">
+    <mat-card style="margin-top: 20px;">
+    
+        <div class="container text-center">
+                        
+            <img src="../../../../assets/doctor.png" class="profile-image" alt=""> 
+            <h1>{{getd.name}}</h1>
+               
+                <mat-card-subtitle style="font-size: 19px;">{{getd.username}}</mat-card-subtitle>
+    
+            <div class="text-center">
+                <button mat-raised-button color="primary">Contact</button>
+                
+            </div>
+        
+        </div>
+    </mat-card>
+    </div>
+    <div class="col-md-8" style="margin-top: 20px;">
+        <mat-card>
+            <mat-list>
+                <mat-list-item> 
+                    <div mat-line ><b>FullName</b></div>
+                    <div>{{getd.firstname}} {{getd.lastname}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> 
+                    <div mat-line ><b>Age</b></div>
+                    <div>{{getd.age}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> 
+                    <div mat-line ><b>Sex</b></div>
+                    <div>{{getd.sex}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> 
+                    <div mat-line ><b>email</b></div>
+                    <div>{{getd.name}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+    
+                <mat-list-item> 
+                    <div mat-line ><b>Phone Number</b></div>
+                    <div>{{getd.mobilenumber}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+    
+                <mat-list-item> 
+                    <div mat-line ><b>Designation</b></div>
+                    <div>{{getd.degignation}}</div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+    
+                <mat-list-item> 
+                    <div mat-line ><b>State</b></div>
+                    <div></div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+    
+               </mat-list>
+        </mat-card>
+    </div>
+    
+    </div>
+    

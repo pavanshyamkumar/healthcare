@@ -1,0 +1,171 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card>
+            <br>
+            <mat-card-title class="text-center">Add Doctor</mat-card-title>
+            <br>
+            <mat-divider></mat-divider>
+            <br><br>
+
+            <form (ngSubmit)="submit()" #a="ngForm">
+                <mat-form-field style="width: 100%;">
+                    <mat-label>Username</mat-label>
+                    <input [(ngModel)]="updatedata.email" #uk="ngModel" name="email" type="text" name="decription"
+                        matInput placeholder="enter the username" required>
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="uk.invalid && uk.touched">Username is Required
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field style="width: 100%;">
+                    <mat-label>Email</mat-label>
+                    <input [(ngModel)]="updatedata.username" name="username" type="text" name="title" matInput
+                        placeholder="enter the email..." #use="ngModel" required
+                        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="use.invalid && use.touched">Invalid EmailId
+                    </mat-hint>
+                </mat-form-field>
+                <mat-form-field style="width: 100%;">
+                    <mat-label>Password</mat-label>
+                    <input matInput [(ngModel)]="updatedata.password" #p="ngModel" name="password"
+                        [type]="hide ? 'password' : 'text'" placeholder="Enter Your Password....." required>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="p.invalid && p.touched">Username is Required
+                    </mat-hint>
+                </mat-form-field>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">LastName</mat-label>
+                            <input [(ngModel)]="updatedata.lastname" #pf="ngModel" name="lastname" matInput type="text"
+                                required>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pf.invalid && pf.touched">last name is
+                                Required
+                            </mat-hint>
+                        </mat-form-field>
+                        <br><br>
+
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">FirstName</mat-label>
+                            <input [(ngModel)]="updatedata.firstname" #pl="ngModel" name="firstname" matInput
+                                type="text" required>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pl.invalid && pl.touched">firstname is
+                                Required
+                            </mat-hint>
+                        </mat-form-field>
+                        <br><br>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">Qulification</mat-label>
+                            <input [(ngModel)]="updatedata.qualification" #pq="ngModel" name="qualification" matInput
+                                type="text" required>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pq.invalid && pq.touched">qualification
+                                is Required
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-md-6">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">Experieance</mat-label>
+                            <input [(ngModel)]="updatedata.experience" #pex="ngModel" name="experience" matInput
+                                type="text" required>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pex.invalid && pex.touched">experiance
+                                is Required
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field style="width: 60%;" appearance="fill">
+                            <mat-label>Designation</mat-label>
+                            <mat-select [(ngModel)]="updatedata.designation" name="designation" #pexv="ngModel"
+                                required>
+                                <mat-option *ngFor="let f of deg" [value]="f.value">
+                                    {{f.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pexv.invalid && pexv.touched">Username
+                                is Required
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">Department</mat-label>
+
+                            <input [(ngModel)]="updatedata.department" #pexvd="ngModel" name="department" matInput
+                                type="text" required>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pexvd.invalid && pexvd.touched">
+                                department is Required
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+
+                <div>
+                    <label>Gender </label>
+                    <mat-radio-group aria-label="Select an option" #pexvg="ngModel" [(ngModel)]="updatedata.sex"
+                        name='sex' required>
+                        <mat-radio-button value="Male">Male</mat-radio-button>
+                        <mat-radio-button value="Female">Female</mat-radio-button>
+                        <mat-radio-button value="others">Others</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="pexvg.invalid && pexvg.touched">Username is
+                        Required
+                    </mat-hint>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">MobileNumber</mat-label>
+                            <input [(ngModel)]="updatedata.mobilenumber" #pexvm="ngModel" name="mobilenumber" matInput
+                                type="text" required maxlength="10">
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pexvm.invalid && pexvm.touched">
+                                mobilenumber is Required and min length 10
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <mat-form-field class="ex">
+                            <mat-label class="size">locality</mat-label>
+                            <input [(ngModel)]="updatedata.locality" #pexvml="ngModel" name="locality" matInput
+                                type="text" required>
+                            <mat-hint style="color:red;font-size: 14px;" *ngIf="pexvml.invalid && pexvml.touched">
+                                locality is Required
+                            </mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+
+
+
+                <mat-card-actions>
+                    <div class="container text-center">
+                        <button type="submit" mat-flat-button [disabled]="a.invalid"
+                            color="primary">&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;</button>
+                        <button mat-flat-button color="warn"
+                            style="margin-left: 10px;">&nbsp;&nbsp;&nbsp;Clear&nbsp;&nbsp;&nbsp;</button>
+                    </div>
+                </mat-card-actions>
+
+            </form>
+
+
+
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+   <mat-icon>home</mat-icon>&nbsp;&nbsp; <span>Health Care Management</span>
+   <span class="example-spacer"></span>
+   <a *ngIf="!login.islogin()"
+    [routerLink]="'/login'" mat-icon-button style="font-size: 15px; margin-right: 80px;">
+    <mat-icon>login</mat-icon> Login 
+   </a>
+   <a *ngIf="!login.islogin()"
+    [routerLink]="'/register'" style="margin-right: 70px;" mat-icon-button >
+     <mat-icon>person_add</mat-icon> Register
+   </a>
+
+   <a 
+    (click)="logout()"
+    *ngIf="login.islogin()"  mat-icon-button style="margin-right: 20px;" >
+    <mat-icon mat-list-icon>logout</mat-icon> Logout
+    </a>
+
+
+
+  </mat-toolbar>

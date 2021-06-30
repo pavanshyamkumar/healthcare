@@ -1,0 +1,25 @@
+
+        <mat-card class="ma">
+            <div>
+              <button (click)="opendialog()" mat-raised-button style="float: right;margin-right: 400px;" color="accent"><mat-icon>add</mat-icon> Add Patient</button>
+            </div>
+            <br><br>
+           <div  *ngFor="let c of getalldata">
+              <mat-card class="mat" *ngIf="c.authorities[0].authority=='PATIENT'" >
+                  <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title><a [routerLink]="'/admin/viewpat/'+c.id">{{c.email}}</a></mat-card-title>
+                      <mat-card-subtitle>{{c.username}}</mat-card-subtitle>
+                    </mat-card-header>
+                 
+                    <mat-card-actions >
+                      <button  [routerLink]="'/admin/update-patient/'+c.id" mat-raised-button color="primary" style="margin-right: 20px;margin-left: 20px;"><mat-icon style="font-size: 20px;">edit</mat-icon> update</button>
+                        <button (click)="delete(c.id,c.authorities[0].authority)" mat-raised-button  color="warn"><mat-icon style="font-size: 20px;">delete</mat-icon> Delete</button>
+                        <button [routerLink]="'/admin/viewpatient-appointments/'+c.id" mat-raised-button  color="accent"> View Appointments</button>
+                    </mat-card-actions>
+              </mat-card>
+              </div>
+      
+              </mat-card>
+  
+  

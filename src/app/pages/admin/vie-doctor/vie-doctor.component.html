@@ -1,0 +1,26 @@
+
+
+
+        <mat-card class="ma">
+            <div>
+              <button routerLink="/admin/add-doctor" mat-raised-button style="float: right;margin-right: 400px;" color="accent"><mat-icon>add</mat-icon> Add Doctor</button>
+            </div>
+            <br><br>
+           <div  *ngFor="let c of getalldata">
+              <mat-card class="mat" *ngIf="c.authorities[0].authority=='DOCTOR'" >
+                  <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title><a [routerLink]="'/admin/viewdoc/'+c.id">{{c.email}}</a></mat-card-title>
+                      <mat-card-subtitle>{{c.username}}</mat-card-subtitle>
+                    </mat-card-header>
+                 
+                    <mat-card-actions >
+                      <button [routerLink]="'/admin/update/'+c.id" mat-raised-button color="primary" style="margin-right: 20px;margin-left: 500px;"><mat-icon style="font-size: 20px;">edit</mat-icon> update</button>
+                        <button (click)="delete(c.id,c.authorities[0].authority)" mat-raised-button  color="warn"><mat-icon style="font-size: 20px;">delete</mat-icon> Delete</button>
+                    </mat-card-actions>
+              </mat-card>
+              </div>
+      
+              </mat-card>
+  
+  

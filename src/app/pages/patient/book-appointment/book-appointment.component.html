@@ -1,0 +1,160 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Book Appointment</mat-card-title>
+  </mat-card-header>
+
+
+  <div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row mt10">
+        <div class="col-md-10">
+
+          <mat-card>
+
+            <form #a="ngForm">
+              <mat-form-field style="width: 100%;">
+                <mat-label>Enter Patientname Name</mat-label>
+                <input [(ngModel)]="saveappdata.name" #uk="ngModel" name="name" matInput placeholder="Enter the name"
+                  required>
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="uk.invalid && uk.touched">Patientname is Required
+                </mat-hint>
+              </mat-form-field>
+              <mat-form-field style="width: 100%;">
+                <mat-label>Enter Email</mat-label>
+                <input [(ngModel)]="saveappdata.weight" name="weight" matInput placeholder="Enter the Email"
+                  #use="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="use.invalid && use.touched">Invalid EmailId
+                </mat-hint>
+              </mat-form-field>
+              <br>
+              <br>
+              <mat-form-field style="width: 100%;">
+                <mat-label>Enter Age</mat-label>
+                <input [(ngModel)]="saveappdata.age" #ukg="ngModel" name="age" matInput placeholder="Enter the age"
+                  required>
+                <mat-hint style="color:red;font-size: 14px;" *ngIf="ukg.invalid && ukg.touched">Age is Required
+                </mat-hint>
+              </mat-form-field>
+              <br>
+              <br>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="ex">Gender:
+                  </label>
+
+                  <mat-radio-group [(ngModel)]="saveappdata.sex" name="sex" aria-label="Select an option">
+                    <mat-radio-button value="Male">&nbsp;Male&nbsp;</mat-radio-button>
+                    <mat-radio-button value="Female">&nbsp;Female&nbsp;</mat-radio-button>
+                    <mat-radio-button value="Others">&nbsp;Others&nbsp;</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+              </div>
+              <br>
+              <br>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Appointment date</mat-label>
+                    <input matInput #uh="ngModel" [(ngModel)]="getdata.date" name="date" [matDatepicker]="picker"
+                      required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="uh.invalid && uh.touched">date is Required
+                    </mat-hint>
+                  </mat-form-field>
+                  <button (click)="check()" mat-raised-button color="warn">Check Avalability Slots</button>
+                </div>
+                <div class="col-md-8">
+                  <label class="ex">Avalable Slots:
+                  </label>
+                  <br>
+                  <label *ngIf="s1==1 && s2==1 && s3==1 && s4==1" style="color: red;">No Slots avalable try another
+                    date<br></label>
+
+                  <mat-radio-group *ngIf="k" name="slot"  [(ngModel)]="slots.slot"
+                    aria-label="Select an option">
+                    <mat-radio-button *ngIf="s1==0" value="slot1">&nbsp;10:00 am&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button *ngIf="s1==1" value="Male" disabled>&nbsp;10:00 am&nbsp;&nbsp;</mat-radio-button>
+
+                    <mat-radio-button *ngIf="s2==0" value="slot2">&nbsp;11:00 am&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button *ngIf="s2==1" value="Female" disabled>&nbsp;11:00 am&nbsp;&nbsp;
+                    </mat-radio-button>
+
+                    <mat-radio-button *ngIf="s3==0" value="slot3">&nbsp;2:00 pm&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button *ngIf="s3==1" value="Others" disabled>&nbsp;2:00 pm &nbsp;&nbsp;
+                    </mat-radio-button>
+
+                    <mat-radio-button *ngIf="s4==1" value="sl" disabled>&nbsp;3:00 pm&nbsp;&nbsp;</mat-radio-button>
+                    <mat-radio-button *ngIf="s4==0" value="slot4">&nbsp;3:00 pm&nbsp;&nbsp;</mat-radio-button>
+
+                  </mat-radio-group>
+                </div>
+
+              </div>
+
+
+              <br>
+              <br>
+
+
+              <div class="row">
+                <div class="col-md-8">
+                  <mat-form-field style="width: 80%;">
+                    <mat-label>Enter the Problem</mat-label>
+                    <input [(ngModel)]="saveappdata.problem" #p="ngModel" name="problem" matInput
+                      placeholder="Enter the problem..." required>
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="p.invalid && p.touched">problem is Required
+                    </mat-hint>
+                  </mat-form-field>
+
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field style="width: 80%;">
+                    <mat-label>Phone number</mat-label>
+                    <input [(ngModel)]="saveappdata.decription" #ph="ngModel" name="decription" type="number" matInput
+                      placeholder="Enter phone number" required>
+                    <mat-hint style="color:red;font-size: 14px;" *ngIf="ph.invalid && ph.touched">problem is Required
+                    </mat-hint>
+                  </mat-form-field>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+
+
+                </div>
+                <div class="col-md-6">
+
+
+                </div>
+              </div>
+              <div class="container text-center">
+                <button type="submit" (click)="submit()" [disabled]="a.invalid" mat-raised-button color="primary">Book
+                  Appointment</button>
+
+              </div>
+            </form>
+
+
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {{ getdata | json }}
+
+  {{appdata | json }}
+</mat-card>
+
+
+{{saveappdata | json}}
+
+{{slots | json}}

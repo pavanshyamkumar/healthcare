@@ -1,0 +1,32 @@
+.c{
+    background-image: url("../../../../assets/patientpic2.jpg");
+    height: 60%;
+    background-size: cover;
+}
+.center{
+   
+        padding: 100px 0;
+      
+        text-align: center;
+    
+}
+.profile-image
+{
+    max-width: 70px;
+    max-height: 70px;
+    border: 2px solid rgb(212, 206, 206);
+    border-radius: 50%;
+}
+
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../../assets//doctor.png');
+    background-size: cover;
+  }
+  .header-image{
+    background-image: url('../../../../assets//doc.png');
+    background-size: cover;
+  }

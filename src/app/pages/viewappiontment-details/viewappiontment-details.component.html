@@ -1,0 +1,80 @@
+<mat-card>
+  
+        <mat-card-title class="text-center">
+            Appointment Details
+        </mat-card-title>
+        <br>
+        <mat-divider></mat-divider>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+               <br><br>
+               <div class="row">
+                <div class="col-md-6">
+                    <h3>Status:</h3>
+                </div>
+                <div class="col-md-6">
+                    <h3 *ngIf="!getdata.status" style="color: red;">PENDING</h3>
+                    <h3 *ngIf="getdata.status" style="color: red;">ACCEPTED</h3>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Name:</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{getdata.name}}</h3>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Age:</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{getdata.age}}</h3>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Sex:</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{getdata.sex}}</h3>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>probleam:</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{getdata.problem}}</h3>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Booked date:</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{getdata.date}}</h3>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Slot:</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 *ngIf="getdata.slot1">10:00 am</h3>
+                        <h3 *ngIf="getdata.slot2">11:00 am</h3>
+                        <h3 *ngIf="getdata.slot3">2:00 pm</h3>
+                        <h3 *ngIf="getdata.slot4">3:00 pm</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+</mat-card>

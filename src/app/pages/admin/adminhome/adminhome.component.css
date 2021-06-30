@@ -1,0 +1,19 @@
+.k{
+    margin-top: 30px;
+    width: 90%;
+    border-radius: 10px;
+  
+}
+
+.avatar{
+    background-image: url("../../../../assets/doctor.png");
+    background-size: cover;
+}
+.example{
+    background-image: url("../../../../assets/patient.png");
+    background-size: cover;
+}
+.ex{
+    background-image: url("../../../../assets/doctor.png");
+    background-size: cover;
+}
